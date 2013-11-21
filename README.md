@@ -4,6 +4,11 @@ This is currently a work-in-progress. It will need refinement overtime.
 This work is based on earlier work by Mark Hatle hosted at this wiki page:
 [Adding a secondary toolchain](http://www.openembedded.org/wiki/Adding_a_secondary_toolchain)
 
+## Status
+
+Currently able to build some small packages like xz, etc. using the secondary llvm toolchain.
+Also able to build busybox with a busybox patch from upstream that isn't yet included in poky (git commit id 6db5f679a21342249e6a6eb06ec70a337bf0d0b0).
+
 ## Installation
 
 Clone this repository into your poky directory.
