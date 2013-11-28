@@ -1,4 +1,4 @@
-# In order to add overrides, we need to do it later then in the layers.conf
+# In order to add overrides, we need to do it later than in the layers.conf
 # the only standard way is using an inherit, which requires a bbclass
 
 # Add the necessary override
