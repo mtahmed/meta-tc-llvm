@@ -6,14 +6,30 @@ This work is based on earlier work by Mark Hatle hosted at this wiki page:
 
 ## Status
 
-Currently able to build some small packages like xz, etc. using the secondary llvm toolchain.
-Also able to build busybox with a busybox patch from upstream that isn't yet included in poky (git commit id 6db5f679a21342249e6a6eb06ec70a337bf0d0b0).
+Able to build all the packages for `core-image-minimal` except the following:
+
+- linux-yocto-tiny
+- dtc
+- elfutils
+- gcc
+- gcc-cross
+- gcc-cross-initial
+- gcc-runtime
+- prelink
+- eglibc
+- rpm
+- libgcc
+- e2fsprogs
+
+Some of the packages that do build require patches either from upstream or
+the ones added by me to my [poky](https://github.com/mtahmed/poky) repository.
 
 ## Installation
 
 Clone this repository into your poky directory.
 
 ```bash
+git clone https://github.com/mtahmed/poky.git
 cd poky
 git clone https://github.com/mtahmed/meta-tc-llvm.git
 ```
@@ -26,11 +42,7 @@ has the llvm+clang libraries.
 
 After the `source oe-init-build-env build-dir`, change bblayers.conf file
 to include the `meta-tc-llvm` layer and change the other `conf/local.conf` file
-appropriately.
-
-Currently, it is configured to only compile the xz package using clang. To change
-this, edit the `poky/meta-tc-llvm/{tc-llvm-blacklist,tc-llvm}.conf` files to
-add more packages etc.
+as needed.
 
 # Contact
 
