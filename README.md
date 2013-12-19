@@ -34,9 +34,21 @@ cd poky
 git clone https://github.com/mtahmed/meta-tc-llvm.git
 ```
 
-Then build clang and install to `poky/meta-tc-llvm` directory so that the
-`poky/meta-tc-llvm/bin/` has the llvm+clang binaries and `poky/meta-tc-llvm/lib`
-has the llvm+clang libraries.
+This `meta-tc-llvm` layer and the `poky-clang` tree that it is used with do not
+have a recipe to build clang (yet) and rely on the user providing their own
+pre-built clang. There are two ways to achieve this:
+
+#### Install clang on host OS
+
+Simply installing clang on the host OS is sufficient if you do not want to build
+clang yourself. This does require that the clang provided by the host OS has
+all targets enabled (`--enable-targets=all` option).
+
+#### Build clang yourself
+
+One can also build clang themselves and install to `poky/meta-tc-llvm`
+directory (so that the `poky/meta-tc-llvm/bin/` has the llvm+clang binaries and
+`poky/meta-tc-llvm/lib` has the llvm+clang libraries.)
 
 ## Usage
 
